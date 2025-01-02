@@ -1,36 +1,46 @@
 # **Sentiment Analysis on the Inauguration of the Elected President of Indonesia**
 
-This project focuses on performing sentiment analysis on public opinion regarding the inauguration of the elected president of Indonesia. By leveraging pre-trained transformer models like **BERT** and **IndoBERT**, the project aims to classify sentiments into categories such as positive, negative, and neutral.
+This project focuses on analyzing public sentiment on Twitter regarding the inauguration of the elected president and vice president of Indonesia. By leveraging multiple pre-trained transformer-based models, the project compares sentiment predictions and trends while providing in-depth insights through visualization and analysis.
 
 ---
 
 ## **Features**
-- **Pre-trained Transformer Models**: Utilizes **BERT** and **IndoBERT** for feature extraction and fine-tuning on Indonesian text.
-- **Sentiment Classification**: Categorizes sentiments into positive, negative, and neutral classes.
-- **Custom Dataset**: Analyzes real-world social media or news data related to the inauguration.
-- **Comprehensive Pipeline**: Includes data preprocessing, model training, evaluation, and visualization.
+- **Data Crawling**: Collects tweets discussing the inauguration using Twitter's API.
+- **Transformer Models**: Utilizes multiple pre-trained sentiment analysis models fine-tuned on Indonesian text:
+  - [mdhugol/indonesia-bert-sentiment-classification](https://huggingface.co/mdhugol/indonesia-bert-sentiment-classification)
+  - [w11wo/indonesian-roberta-base-sentiment-classifier](https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier)
+  - [StevenRiyaldi/Indonesia-Pemilu-Sentiment-Classification](https://huggingface.co/StevenRiyaldi/Indonesia-Pemilu-Sentiment-Classification)
+- **Comprehensive Analysis**:
+  - Sentiment distribution comparison across models.
+  - Sentiment trends over time.
+  - Agreement and confusion matrices between models.
+  - Sentiment analysis on key terms and topics.
+  - Word cloud visualization based on sentiment.
 
 ---
 
 ## **Project Workflow**
 1. **Data Collection**:
-   - Gather text data from sources such as **Twitter**, **news articles**, or other public datasets related to the inauguration.
-   - Clean and preprocess the data (e.g., remove duplicates, handle missing values).
+   - Crawl tweets related to the inauguration using Twitter's API.
+   - Filter tweets based on relevance (keywords like "pelantikan presiden," "wakil presiden terpilih," etc.).
 
 2. **Preprocessing**:
-   - **Text Tokenization**: Tokenize text using the tokenizer for BERT or IndoBERT.
-   - **Text Cleaning**: Remove stopwords, URLs, mentions, and irrelevant content.
-   - **Labeling**: Annotate text with sentiment labels (positive, negative, neutral).
+   - Remove irrelevant content (URLs, mentions, hashtags, duplicates).
+   - Normalize text for consistency.
 
-3. **Model Training**:
-   - Fine-tune **BERT** or **IndoBERT** on the processed dataset.
-   - Use a classification head for sentiment classification.
+3. **Sentiment Analysis**:
+   - Use the following pre-trained transformer-based models for sentiment classification:
+     - **mdhugol/indonesia-bert-sentiment-classification**
+     - **w11wo/indonesian-roberta-base-sentiment-classifier**
+     - **StevenRiyaldi/Indonesia-Pemilu-Sentiment-Classification**
+   - Predict sentiment for each tweet (positive, negative, neutral).
 
-4. **Evaluation**:
-   - Evaluate the model on a validation/test set using metrics such as **accuracy**, **precision**, **recall**, and **F1-score**.
-   - Compare the performance of BERT and IndoBERT models.
-
-5. **Visualization**:
-   - Visualize sentiment distribution, confusion matrices, and prediction examples.
+4. **Analysis and Visualization**:
+   - **Sentiment Distribution Comparison**: Compare the distribution of sentiments predicted by each model.
+   - **Sentiment Trend Over Time**: Visualize how sentiment evolves during the inauguration period.
+   - **Agreement Between Models**: Analyze the level of agreement between different models.
+   - **Sentiment Confusion Matrix**: Highlight discrepancies in sentiment predictions.
+   - **Sentiment Analysis on Key Terms/Topics**: Identify dominant sentiments around specific terms/topics (e.g., "presiden," "pelantikan").
+   - **Word Cloud**: Generate word clouds based on positive, negative, and neutral sentiments.
 
 ---
